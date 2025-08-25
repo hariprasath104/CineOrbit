@@ -1,0 +1,165 @@
+/* static/css/style.css - CineOrbit Brand Theme */
+
+/* --- 1. CSS Variables from your Design Prompt --- */
+:root {
+    --bg-dark-space: #0F172A; /* Base background */
+    --card-bg: #1E293B;       /* Slightly lighter for cards/forms */
+    --text-primary: #E5E7EB;   /* Main text color */
+    --text-secondary: #94A3B8; /* Lighter text for placeholders */
+    --accent-purple: #7C3AED;  /* Primary accent */
+    --accent-cyan: #22D3EE;    /* Secondary accent */
+    --border-color: #334155;  /* Borders for inputs and cards */
+
+    /* Typography from your prompt */
+    --font-display: 'Poppins', sans-serif; /* For headings and logo */
+    --font-body: 'Inter', sans-serif;       /* For UI text */
+}
+
+/* --- 2. General Body & Reset Styles --- */
+body {
+    background-color: var(--bg-dark-space);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    margin: 0;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #67e8f9; /* Lighter cyan on hover */
+}
+
+/* --- 3. Navbar Styling --- */
+.navbar-custom {
+    background-color: var(--bg-dark-space);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary) !important;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary) !important;
+}
+
+/* --- 4. Main Content & Form Styling --- */
+.form-container, .content-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 450px;
+    margin: 2rem auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.form-control {
+    background-color: var(--bg-dark-space);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.form-control:focus {
+    background-color: var(--bg-dark-space);
+    color: var(--text-primary);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25); /* Focus ring */
+}
+
+/* --- 5. Button Styling --- */
+.btn-primary {
+    background-color: var(--accent-purple);
+    border-color: var(--accent-purple);
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #8b5cf6; /* Lighter purple */
+    border-color: #8b5cf6;
+    transform: translateY(-2px);
+}
+
+/* --- 6. Homepage Hero Styling --- */
+.hero-section {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.hero-section .tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* --- 7. Flash Messages --- */
+.alert {
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+}
+.alert-success {
+    background-color: rgba(34, 211, 238, 0.1);
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+}
+.alert-danger {
+    background-color: rgba(244, 63, 94, 0.1);
+    color: #f43f5e;
+    border-color: #f43f5e;
+}
+.alert-info {
+    background-color: rgba(99, 102, 241, 0.1);
+    color: #818cf8;
+    border-color: #818cf8;
+}

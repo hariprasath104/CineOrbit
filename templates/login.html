@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - CineOrbit{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>Login to CineOrbit</h2>
+        <form method="POST" action="{{ url_for('login') }}" novalidate>
+            {{ form.hidden_tag() }} <!-- CSRF token -->
+
+            <div class="mb-3">
+                {{ form.username.label(class="form-label") }}
+                {{ form.username(class="form-control") }}
+            </div>
+            <div class="mb-4">
+                {{ form.password.label(class="form-label") }}
+                {{ form.password(class="form-control") }}
+            </div>
+            <div class="d-grid">
+                {{ form.submit(class="btn btn-primary btn-lg") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}
