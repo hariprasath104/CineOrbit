@@ -1,0 +1,19 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Local instance folder
+instance/
+
+# Local database file
+database.db
+
+# Environment variables file (IMPORTANT!)
+.env
+
+# VS Code settings
+.vscode/
