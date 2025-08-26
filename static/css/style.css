@@ -162,4 +162,130 @@ a:hover {
     background-color: rgba(99, 102, 241, 0.1);
     color: #818cf8;
     border-color: #818cf8;
+
+}
+/* --- NEW: Dashboard Layout Styles --- */
+
+.dashboard-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns on desktop */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.dashboard-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem; /* rounded-2xl */
+    padding: 1.5rem;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-card h3 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+}
+
+/* --- Specific Card Styles --- */
+
+/* Chat UI Placeholder */
+.chat-ui .messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+.chat-ui .message {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-dark-space);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 80%;
+}
+.chat-ui .message.sent {
+    background-color: var(--accent-purple);
+    margin-left: auto;
+}
+.chat-ui .chat-input {
+    display: flex;
+}
+.chat-ui .chat-input input {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+}
+
+/* Creator List */
+.creator-list-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+}
+.creator-list-item:hover {
+    background-color: var(--bg-dark-space);
+}
+.creator-list-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+.creator-list-item .rating {
+    margin-left: auto;
+    color: #f59e0b; /* Yellow for stars */
+}
+
+/* Project Forms Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+.tab-button {
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+.tab-button.active {
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* --- Bottom Section --- */
+.about-details-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    gap: 1.5rem;
+    text-align: center;
+}
+
+/* Responsive: Stack columns on smaller screens */
+@media (max-width: 992px) {
+    .dashboard-grid, .about-details-section {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
 }
