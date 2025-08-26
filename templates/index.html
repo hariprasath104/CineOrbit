@@ -3,12 +3,67 @@
 {% block title %}CineOrbit - Your Cinema in Orbit{% endblock %}
 
 {% block content %}
-    <div class="hero-section">
-        <h1>Welcome to CineOrbit</h1>
-        <p class="tagline">Your Cinema in Orbit. Upload, edit, and review videos in a universe of entertainment.</p>
-        <div>
-            <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Login</a>
-            <a class="btn btn-outline-light btn-lg ms-2" href="{{ url_for('register') }}" role="button">Register</a>
+
+<!-- 1. Hero Section with Chat Cards -->
+<div class="hero-section">
+    <h1 class="hero-title">Welcome to CineOrbit</h1>
+    <p class="hero-subtitle">Your Cinema in Orbit. Upload, edit, and review videos in a universe of entertainment.</p>
+
+    <div class="chat-card-container">
+        <!-- Creators Chat Card -->
+        <div class="chat-card">
+            <h3><i class="fas fa-video"></i> Creators Chat</h3>
+            <p>A space for video creators to discuss techniques, share progress, and collaborate on projects.</p>
+            <!-- In the future, a live chat module can be embedded here -->
+        </div>
+
+        <!-- Clients Chat Card -->
+        <div class="chat-card">
+            <h3><i class="fas fa-star"></i> Clients Chat</h3>
+            <p>A dedicated area for clients to provide feedback, review submitted work, and rate final videos.</p>
+            <!-- In the future, a live chat module can be embedded here -->
         </div>
     </div>
+</div>
+
+<!-- 2. About Section -->
+<section class="about-section">
+    <div class="container">
+        <h2>About CineOrbit</h2>
+        <p>
+            CineOrbit is a modern platform designed to connect talented video creators with clients seeking high-quality video production. Our mission is to streamline the creative process, from initial upload to final review, making collaboration seamless and efficient.
+        </p>
+        <div class="features-list">
+            <div class="feature-item">
+                <i class="fas fa-upload"></i>
+                <span>Upload</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-edit"></i>
+                <span>Edit</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-star-half-alt"></i>
+                <span>Rate</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-comments"></i>
+                <span>Review</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2025 CineOrbit. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</footer>
+
 {% endblock %}
