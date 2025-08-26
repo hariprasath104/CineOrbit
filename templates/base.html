@@ -13,12 +13,17 @@
     <!-- We will use our custom CSS instead of Bootstrap for the new design -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- NEW: Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">CineOrbit</a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+    <img src="{{ url_for('static', filename='images/cineorbit-logo.svg') }}" alt="CineOrbit Logo">
+</a>
+<a class="navbar-brand" href="{{ url_for('index') }}">CineOrbit</a>
             <div class="ms-auto">
                 <ul class="navbar-nav">
                     {% if current_user.is_authenticated %}
