@@ -1,11 +1,110 @@
 {% extends 'base.html' %}
 
-{% block title %}Creator Dashboard - CineOrbit{% endblock %}
+{% block title %}Dashboard - CineOrbit{% endblock %}
 
 {% block content %}
-    <div class="content-card">
-        <h1 class="mb-3">Creator Dashboard</h1>
-        <p class="text-secondary">Welcome, {{ name }}! Here you can view project requests from clients and manage your work.</p>
-        <!-- In the future, you will list the incoming project requests here -->
+<h1 class="dashboard-heading">Welcome to your Dashboard, {{ name }}!</h1>
+
+<!-- TOP SECTION: 3 Columns -->
+<div class="dashboard-grid">
+    <!-- Column 1: Chat UI -->
+    <div class="dashboard-card chat-ui">
+        <h3>Chat</h3>
+        <div class="messages">
+            <!-- Chat messages will appear here -->
+            <div class="message">Hello! How can I help you?</div>
+            <div class="message sent">I have a new project request.</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" class="form-control" placeholder="Type a message...">
+            <button class="btn btn-primary">Send</button>
+        </div>
     </div>
+
+    <!-- Column 2: Top Creators -->
+    <div class="dashboard-card">
+        <h3>Top Creators</h3>
+        <div class="creator-list">
+            <!-- A list of creators will appear here -->
+            <div class="creator-list-item">
+                <img src="https://i.pravatar.cc/40?img=1" alt="Creator">
+                <div>
+                    <h5>John Doe</h5>
+                    <small class="text-secondary">Video Editor</small>
+                </div>
+                <div class="rating">★★★★★</div>
+            </div>
+            <div class="creator-list-item">
+                <img src="https://i.pravatar.cc/40?img=2" alt="Creator">
+                <div>
+                    <h5>Jane Smith</h5>
+                    <small class="text-secondary">Motion Graphics</small>
+                </div>
+                <div class="rating">★★★★☆</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Column 3: Project Forms -->
+    <div class="dashboard-card project-forms">
+        <h3>Project Hub</h3>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'ClientForm')">New Project</button>
+            <button class="tab-button" onclick="openTab(event, 'CreatorForm')">Submit Work</button>
+        </div>
+
+        <!-- Client Form Tab -->
+        <div id="ClientForm" class="tab-content active">
+            <h5>Submit a New Project Request</h5>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Project Title</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Upload Video File</label>
+                    <input type="file" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Send Request</button>
+            </form>
+        </div>
+
+        <!-- Creator Form Tab -->
+        <div id="CreatorForm" class="tab-content">
+            <h5>Submit Your Edited Video</h5>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Select Project</label>
+                    <select class="form-control">
+                        <option>Project A</option>
+                        <option>Project B</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Upload Final Video</label>
+                    <input type="file" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit for Review</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- BOTTOM SECTION: 2 Columns -->
+<div class="about-details-section">
+    <div class="dashboard-card">
+        <h3>About CineOrbit</h3>
+        <p class="text-secondary">CineOrbit is a modern platform connecting talented video creators with clients who need high-quality video editing. Our mission is to make the creative process seamless and efficient.</p>
+    </div>
+    <div class="dashboard-card">
+        <h3>Details & Features</h3>
+        <ul class="list-unstyled text-secondary text-start">
+            <li>✓ Secure Login & Registration</li>
+            <li>✓ Role-based Dashboards (Client/Creator)</li>
+            <li>✓ Project Request System</li>
+            <li>✓ In-App Chat for Collaboration</li>
+            <li>✓ Creator Rating System</li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
